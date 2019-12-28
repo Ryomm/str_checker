@@ -9,15 +9,17 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <input type="text" size=130 placeholder="ここに質問文をコピペ">
+        <div class="card">
+            <input class="question_zone" type="text" size=130 placeholder="ここに質問文をコピペ">
         
-        <textarea rows="10" cols="130" placeholder="ここに回答を入力" id="kaito"></textarea>
+            <textarea rows="10" cols="130" placeholder="ここに回答を入力" id="kaito"></textarea>
         
-        <p id="moji_num">文字数</p>
+            <p id="moji_num">文字数</p>
         
-        <textarea rows="10" cols="130" placeholder="メモゾーン"></textarea>
-        
-        <button id="reset">リセット</button>
+            <textarea class="memo" rows="10" cols="130"    placeholder="メモゾーン"></textarea>
+            
+            <button id="reset">リセット</button>
+        </div>
         
         <script type="text/javascript" src="./script.js"></script>
     </body>

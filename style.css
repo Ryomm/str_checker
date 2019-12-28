@@ -1,13 +1,106 @@
-input{
-    margin-top: 20px;
-    width: 900px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-textarea{
-    margin-top: 20px;
-    width: 900px;
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-button{
-    margin-top: 20px;
+body {
+    min-height: calc(100vh - 80px);
+    background-color: #F5F5F5;
+    color: #717171;
+    scroll-behavior: smooth;
 }
+
+.card{
+    top: 78px;
+    left: 73px;
+    width: 850px;
+    height: 512px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 3px 3px 6px #bdb3a6;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 50px 75px;
+}
+
+.question_zone{
+    width: 700px;
+    height: 50px;
+    padding: 0 17px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.5px solid #ded6d0;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+#kaito{
+    width: 700px;
+    height: 170px;
+    margin-top: 20px;
+    padding: 15px 17px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.5px solid #ded6d0;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+#moji_num{
+    font-size: 13.5px;
+    text-align: end;
+}
+
+.memo{
+    width: 700px;
+    height: 110px;
+    margin-top: 10px;
+    padding: 15px 17px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.5px solid #ded6d0;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+
+
+#reset{
+    display: block;
+    width: 80px;
+    height: 33px;
+    margin-top: 5px;
+    margin-left: auto;
+    border: 0.5px solid #ff944e;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #FF944E;
+    
+    transition: 0.5s;
+}
+#reset:hover{
+    border: 0.5px solid #ff944e;
+    color: #ff944e;
+    background-color: #fff;
+}
+@keyframes bane{
+    0%{transform: scale(1.2,1.2);}
+    40% { transform: scale(0.4, 0.4); }
+    55% { transform: scale(1, 1); }
+    70% { transform: scale(0.9, 0.9); }
+    80% { transform: rotate(30deg); transform: scale(1, 1); }
+    90% { transform: rotate(-60deg); }
+    100%{ transform: rotate(30deg);}
+}
+#reset:active{
+    animation-name: bane;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+
