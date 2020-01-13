@@ -1,27 +1,54 @@
 //WebFont
 document.write('<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">');
 
+/*-----------------------------------------------------
+htmlを出力する関数
+-----------------------------------------------------*/
 
-//ここから処理
-const hyoji = document.getElementById("moji_num");
-const kaito = document.getElementById("kaito");
-const reset = document.getElementById("reset");
-const question = document.querySelector(".question_zone");
+function createCard(){
+  let card_html="";
+  card_html = `<div class="card">
+            <input class="question" type="text" size="130" placeholder="ここに質問文をコピペ">
+        
+            <textarea rows="10" cols="130" placeholder="ここに回答を入力" class="kaito"></textarea>
+        
+            <p class="moji_num">文字数</p>
+        
+            <textarea class="memo" rows="10" cols="130"    placeholder="メモゾーン"></textarea>
+            
+            <button class="reset">リセット</button>
+        </div>`;
+  document.getElementById('card').innerHTML=card_html;
+}
+
+
+/*=====================================================
+メイン処理
+=====================================================*/
+createCard();
+
+const hyoji = document.querySelector(".moji_num")
+const kaito = document.querySelector(".kaito");
+const reset = document.querySelector(".reset");
+const question = document.querySelector(".question");
 const memo = document.querySelector(".memo");
 
-let cnt=0;
-
-//ロード時の処理
-let q_moji = localStorage.getItem('question');
-question.textContent = q_moji;
-let moji = localStorage.getItem('moji');
-kaito.textContent = moji;
-let m_moji = localStorage.getItem('memo');
-memo.textContent = m_moji;
+//リロード時の処理--------------------------------
+window.onload = function(){
+    let q_moji = localStorage.getItem('question');
+    question.value = q_moji;
+    let moji = localStorage.getItem('moji');
+    kaito.textContent = moji;
+    let m_moji = localStorage.getItem('memo');
+    memo.textContent = m_moji;
+}
+//---------------------------------------------
 
 
 question.addEventListener("change",function(){
+  if(question.value.length>0){
     localStorage.setItem('question',question.value);
+  }
 })
 
 kaito.addEventListener("change", function()
@@ -35,6 +62,18 @@ memo.addEventListener("change", function(){
 })
 
 reset.addEventListener('click',function(){
-    localStorage.removeItem('moji');
-    kaito.textContent='';
+  localStorage.removeItem('question');
+  question.value='';
+  localStorage.removeItem('moji');
+  kaito.textContent='';
+  localStorage.removeItem('memo');
+  memo.textContent='';
 })
+
+//カード追加するボタン
+//document.addEventListener("DOMContentLoaded", function(){
+//  const card_btn = document.querySelector(".add_card");
+//  card_btn.addEventListener("click",function(){
+//    createCard();
+//  })
+//}, false);

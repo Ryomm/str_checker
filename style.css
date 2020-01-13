@@ -17,9 +17,11 @@ body {
     scroll-behavior: smooth;
 }
 
+/*-----------------------------
+カード
+-----------------------------*/
 .card{
-    top: 78px;
-    left: 73px;
+    display: block;
     width: 850px;
     height: 512px;
     margin: 0 auto;
@@ -31,7 +33,7 @@ body {
     padding: 50px 75px;
 }
 
-.question_zone{
+.question{
     width: 700px;
     height: 50px;
     padding: 0 17px;
@@ -41,7 +43,7 @@ body {
     opacity: 1;
 }
 
-#kaito{
+.kaito{
     width: 700px;
     height: 170px;
     margin-top: 20px;
@@ -52,7 +54,7 @@ body {
     opacity: 1;
 }
 
-#moji_num{
+.moji_num{
     font-size: 13.5px;
     text-align: end;
 }
@@ -67,27 +69,32 @@ body {
     border-radius: 5px;
     opacity: 1;
 }
-
-
-
-#reset{
-    display: block;
-    width: 80px;
-    height: 33px;
-    margin-top: 5px;
-    margin-left: auto;
-    border: 0.5px solid #ff944e;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #FF944E;
+/*リセットボタン*/
+.reset{
+  display: block;
+  width: 80px;
+  height: 33px;
+  margin-top: 5px;
+  margin-left: auto;
+  border: 0.5px solid #ff944e;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #FF944E;
+  cursor: pointer;
+  box-shadow: 1px 2px 3px #dedede;
     
-    transition: 0.5s;
+  transition: 0.3s;
 }
-#reset:hover{
-    border: 0.5px solid #ff944e;
-    color: #ff944e;
-    background-color: #fff;
+.reset:hover{
+  border: 0.5px solid #ff944e;
+  color: #ff944e;
+  background-color: #fff;
 }
+.reset:active{
+  transform: translateY(2px);
+  box-shadow: 1px 0px 3px #dedede;
+}
+/*
 @keyframes bane{
     0%{transform: scale(1.2,1.2);}
     40% { transform: scale(0.4, 0.4); }
@@ -97,10 +104,38 @@ body {
     90% { transform: rotate(-60deg); }
     100%{ transform: rotate(30deg);}
 }
-#reset:active{
+.reset:active{
     animation-name: bane;
     animation-duration: 0.5s;
     animation-timing-function: ease-out;
+}
+*/
+
+/*-----------------------------
+カード増やすボタン
+-----------------------------*/
+.add_card{
+  position: fixed;
+  bottom: 16px;
+  right: 26px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  background-color: #FF944E;
+  border-radius: 50%; 
+  border: none;
+  box-shadow: 3px 3px 9px #c5bbae;
+  cursor: pointer;
+  
+  transition: 0.3s;
+}
+.add_card:hover{
+  opacity: 0.85;
+}
+.add_card:active{
+  transform: scale(0.9,0.9);
 }
 
 
