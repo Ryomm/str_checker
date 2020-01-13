@@ -18,7 +18,7 @@ function createCard(){
             
             <button class="reset">リセット</button>
         </div>`;
-  document.getElementById('card').innerHTML=card_html;
+  document.write(card_html);
 }
 
 
@@ -71,9 +71,9 @@ reset.addEventListener('click',function(){
 })
 
 //カード追加するボタン
-//document.addEventListener("DOMContentLoaded", function(){
-//  const card_btn = document.querySelector(".add_card");
-//  card_btn.addEventListener("click",function(){
-//    createCard();
-//  })
-//}, false);
+document.addEventListener("DOMContentLoaded", function(){
+  const card_btn = document.querySelector(".add_card");
+  card_btn.addEventListener("click",function(){
+    createCard();
+  })
+}, false);
