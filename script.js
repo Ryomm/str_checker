@@ -27,16 +27,16 @@ DOM読み込み後の処理
 =====================================================*/
 document.addEventListener("DOMContentLoaded", function(){
 
-  //リロード時の処理--------------------------------
+  //リロード時の処理---------------------------------------
   window.onload = function(){
-    let q_moji = localStorage.getItem('question');
+    let q_moji = localStorage.getItem('question'+id);
     question.value = q_moji;
-    let moji = localStorage.getItem('moji');
+    let moji = localStorage.getItem('moji'+id);
     kaito.textContent = moji;
-    let m_moji = localStorage.getItem('memo');
+    let m_moji = localStorage.getItem('memo'+id);
     memo.textContent = m_moji;
   }
-  //---------------------------------------------
+  //-----------------------------------------------------
 
   const hyoji = document.querySelector(".moji_num")
   const kaito = document.querySelector(".kaito");
@@ -44,35 +44,42 @@ document.addEventListener("DOMContentLoaded", function(){
   const question = document.querySelector(".question");
   const memo = document.querySelector(".memo");
   
+  let content = new Array;
+  content[0] = {};
+  let id=0; //カードの管理番号
+  
   //書いたものをローカルストレージにセットする
   question.addEventListener("change",function(){
-    if(question.value.length>0){
-      localStorage.setItem('question',question.value);
-    }
+    content[id].question = question.value;
+    localStorage.setItem('question'+id,content[id].question);
   })
 
   kaito.addEventListener("change", function(){
+    content[id].kaito = kaito.value;
     hyoji.textContent = kaito.value.length + "文字";
-    localStorage.setItem('moji',kaito.value);
+    localStorage.setItem('moji'+id,content[id].kaito);
   })
 
   memo.addEventListener("change", function(){
-    localStorage.setItem('memo',memo.value);
+    content[id].memo = memo.value;
+    localStorage.setItem('memo'+id,content[id].memo);
   })
 
-  //リセットボタンの処理
+  //リセットボタンの処理---------------------------------------
   reset.addEventListener('click',function(){
-    localStorage.removeItem('question');
+    localStorage.removeItem('question'+id);
     question.value='';
-    localStorage.removeItem('moji');
+    localStorage.removeItem('moji'+id);
     kaito.textContent='';
-    localStorage.removeItem('memo');
+    localStorage.removeItem('memo'+id);
     memo.textContent='';
   })
 
-  //カード追加するボタン
+  
+  //カード追加するボタン---------------------------------------
   const card_btn = document.querySelector(".add_card");
   const card_space = document.getElementById("card_space");
+  
   card_btn.addEventListener("click",function(){
     const card_div = document.createElement('div');
     card_div.setAttribute("class","card");
@@ -109,5 +116,8 @@ document.addEventListener("DOMContentLoaded", function(){
     card_div.appendChild(r_btn);
     card_space.appendChild(card_div);
   })
+  //--------------------------------------------------------
+  
+  
     
 }, false);
