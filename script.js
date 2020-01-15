@@ -22,6 +22,7 @@ function createCard(){
 }
 
 
+
 /*=====================================================
 DOM読み込み後の処理
 =====================================================*/
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const card_space = document.getElementById("card_space");
   
   card_btn.addEventListener("click",function(){
+    id++;
     const card_div = document.createElement('div');
     card_div.setAttribute("class","card");
     
