@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
     const r_btn = document.createElement('button');
     r_btn.setAttribute("class","reset");
+    r_btn.innerHTML="リセット";
     
     card_div.appendChild(q_input);
     card_div.appendChild(k_txarea);
