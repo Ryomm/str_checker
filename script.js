@@ -107,13 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let search_results = new Array; //結果を入れる配列
     let search_word = search_box.value; //検索ワード
     let result_str = '';
-    console.log(targets);
-
-    for (let j = 0; j < targets.length; j++) {
-      if (targets[j].indexOf(search_word) != -1) {
-        search_results.push(targets[j]);
-      }
-    }
+    
+    search_results = targets.filter(target => target.indexOf(search_word) != -1);
+    
+    
     for (let j = 0; j < search_results.length; j++) {
       result_str += '<p>' + search_results[j] + '</p>';
     }
