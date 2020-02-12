@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>文字数チェッカー</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="./script.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <input type="text" id="search_box" placeholder="質問文のキーワードで検索">
+      
+      <div class="search_result"></div>
+      
+      <ul id="card_space">
+        <li class="card">
+              <input class="question" type="text" size="130" placeholder="ここに質問文をコピペ">
+        
+              <textarea rows="10" cols="130" placeholder="ここに回答を入力" class="kaito"></textarea>
+        
+              <p class="moji_num">文字数</p>
+        
+              <textarea class="memo" rows="10" cols="130"    placeholder="メモゾーン"></textarea>
+            
+              <button class="reset">リセット</button>
+        </li>
+      </ul>
+      <button class="add_card">+</button>
+    </body>
+</html>
